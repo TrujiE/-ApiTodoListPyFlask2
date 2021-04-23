@@ -22,10 +22,8 @@ def hello_world():
 
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
-    # r = requests.delete('https://httpbin.org / delete', data ={'key':'value'})
-    json_text = jsonify(todos)
-    json_text.pop([position])
-    return 'Excellent'
+    todos.pop(position)
+    return jsonify(todos)
 
 #def add_new_todo():
 #    request_body = request.data
